@@ -4,18 +4,18 @@ Appends submitter data to lists of stories in HN and highlights accounts that ar
 
 This is two-part:
 
-1. A NodeJS server that runs on Heroku and MongoHQ
-2. A browser userscript created for Chrome's TamperMonkey
+1. A NodeJS server that runs on Heroku and MongoHQ, this automatically monitors the API at [HNSearch](http://hnsearch.com/) for new submissions and explores domains and users it encounters.  The data is synced to MongoDB but resides entirely in memory.
+2. A browser userscript created for Chrome's [TamperMonkey](http://tampermonkey.biniok.net/)
 
 ## Setup instructions
 
-1. Add the TamperMonkey extension and the userscript.js
+1. As a user just add the TamperMonkey extension and the userscript.js.
 
 or
 
 1. Clone the git repo to your own Heroku etc
-2. If you want to save time import the mongodb dump
-3. Change the URLs in the userscript.js to point to your installation
+2. If you want to save time import the mongodb dump, otherwise in submissions.js you might like to change 'firsttime' to true so that it will more proactively look for data.
+3. Change the URLs in the userscript.js to point to your own installation
 
 ### Screenshots
 
@@ -36,6 +36,6 @@ which toggles a strike through, and then clicking hide strikes.
 ![User history](http://i.imgur.com/gx9WEAw.png)
 
 ##### License
-HNSubmitterStats is licensed under the MIT license.  Certain
+HN Submitter Stats is licensed under the MIT license.  Certain
 portions may come from 3rd parties and carry their own licensing
 terms and are referenced where applicable.
